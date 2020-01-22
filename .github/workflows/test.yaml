@@ -19,9 +19,10 @@ jobs:
       with:
         fetch-depth: 1
     - name: lint
-      uses: reviewdog/action-golangci-lint@v1
+      uses: docker://reviewdog/action-golangci-lint:v1
       with:
         github_token: ${{ secrets.github_token }}
+        golangci_lint_flags: "--config=.golangci.yml"
     - name: test
       run: go test -coverprofile coverage.out -covermode atomic ./...
     - name: Convert coverage to lcov
