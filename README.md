@@ -1,10 +1,44 @@
+# Sysbench Report Parser
 
-### Reference
+[![Coverage Status](https://coveralls.io/repos/github/yokogawa-k/sysbench-output-parser/badge.svg?branch=master)](https://coveralls.io/github/yokogawa-k/sysbench-output-parser?branch=master)
+[![Actions Status](https://github.com/yokogawa-k/sysbench-output-parser/workflows/test/badge.svg)](https://github.com/yokogawa-k/sysbench-output-parser/actions)
 
-- [tsuna/sysbench\-tools: Tools to run sysbench, parse and graph its output](https://github.com/tsuna/sysbench-tools)
-- [Sysbench test definition comparison \- eLinux\.org](https://elinux.org/Sysbench_test_definition_comparison#parser.py)
+## Limitations
 
-### Sample
+- now support only database benchmark report (tpcc)
+
+## Overview
+
+```go
+package main
+
+import (
+  "fmt"
+  "os"
+
+	"github.com/yokogawa-k/sysbench-output-parser/dbreport"
+)
+
+func main() {
+	fd, err := os.Open("report.txt")
+	if err != nil {
+		return err
+	}
+
+	s, err := dbreport.ParseDBReport(fd)
+	if err != nil {
+		return err
+	}
+
+  fmt.Println(s)
+}
+```
+
+## Examples
+
+- [sb2csv](./cmd/sb2csv/main.go)
+
+### Samples
 
 #### Original Report
 

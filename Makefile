@@ -25,3 +25,4 @@ cover: ## coverage
 
 fmt: ## go fmt
 	gofmt -l -s -d -w .
+
