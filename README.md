@@ -1,7 +1,7 @@
 # Sysbench Report Parser
 
 [![Coverage Status](https://coveralls.io/repos/github/yokogawa-k/sysbench-output-parser/badge.svg?branch=master)](https://coveralls.io/github/yokogawa-k/sysbench-output-parser?branch=master)
-[![Actions Status](https://github.com/yokogawa-k/sysbench-output-parser/workflows/test/badge.svg)](https://github.com/yokogawa-k/sysbench-output-parser/actions)
+[![Actions Status](https://github.com/yokogawa-k/sysbench-output-parser/workflows/tests/badge.svg)](https://github.com/yokogawa-k/sysbench-output-parser/actions)
 
 ## Limitations
 
@@ -13,8 +13,8 @@
 package main
 
 import (
-  "fmt"
-  "os"
+	"fmt"
+	"os"
 
 	"github.com/yokogawa-k/sysbench-output-parser/dbreport"
 )
@@ -30,13 +30,13 @@ func main() {
 		return err
 	}
 
-  fmt.Println(s)
+	fmt.Println(s)
 }
 ```
 
 ## Examples
 
-- [sb2csv](./cmd/sb2csv/main.go)
+- [sb2csv](./cmd/sb2csv/main.go) sysbench database benchmark report result to csv
 
 ### Samples
 
