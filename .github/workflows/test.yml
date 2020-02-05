@@ -5,6 +5,10 @@ jobs:
     name: runner / go test and coverage
     runs-on: ubuntu-latest
     steps:
+    - name: checkout
+      uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
     - name: setup go
       uses: actions/setup-go@v1
       with:
