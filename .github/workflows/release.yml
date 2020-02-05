@@ -5,12 +5,11 @@ on:
     - "v[0-9]+.[0-9]+.[0-9]+"
 jobs:
   goreleaser:
+    name: runner / goreleaser
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
+        uses: actions/checkout@v2
       - name: Setup Go
         uses: actions/setup-go@v1
         with:
