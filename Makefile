@@ -1,7 +1,7 @@
 # vi: set ft=make ts=2 sw=2 sts=0 noet:
 
 SHELL := /bin/bash
-COVERPROFILE := cover.out
+COVERPROFILE := coverage.out
 TARGET := dbreport
 CMD := $(wildcard cmd/*)
 
